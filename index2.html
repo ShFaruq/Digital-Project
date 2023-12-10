@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      if (localStorage.getItem("consentMode") === null) {
+        gtag("consent", "default", {
+          ad_storage: "denied",
+          analytics_storage: "denied",
+          personalization_storage: "denied",
+          functionality_storage: "denied",
+          security_storage: "denied",
+        });
+      } else {
+        gtag(
+          "consent",
+          "default",
+          JSON.parse(localStorage.getItem("consentMode"))
+        );
+      }
+    </script>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -249,6 +271,57 @@
       <hr style="color: rgba(150, 148, 148, 0.5)" class="footer_line2" />
       <h6 class="so_footer">© 2022 All Rights Reserved.</h6>
     </footer>
+    <div id="cookie-consent-banner" class="cookie-consent-banner">
+      <h3>Cookie settings</h3>
+      <p>
+        We use cookies to provide you with the best possible experience. They
+        also allow us to analyze user behavior in order to constantly improve
+        the website for you.
+      </p>
+      <button id="btn-accept-all" class="cookie-consent-button btn-success">
+        Accept All
+      </button>
+      <button id="btn-accept-some" class="cookie-consent-button btn-outline">
+        Accept Selection
+      </button>
+      <button id="btn-reject-all" class="cookie-consent-button btn-grayscale">
+        Reject All
+      </button>
+      <div class="cookie-consent-options">
+        <label
+          ><input
+            id="consent-necessary"
+            type="checkbox"
+            value="Necessary"
+            checked
+            disabled
+          />Necessary</label
+        >
+        <label
+          ><input
+            id="consent-analytics"
+            type="checkbox"
+            value="Analytics"
+            checked
+          />Analytics</label
+        >
+        <label
+          ><input
+            id="consent-preferences"
+            type="checkbox"
+            value="Preferences"
+            checked
+          />Preferences</label
+        >
+        <label
+          ><input
+            id="consent-marketing"
+            type="checkbox"
+            value="Marketing"
+          />Marketing</label
+        >
+      </div>
+    </div>
     <script src="./lib/bootstrap.js"></script>
     <script src="./preloader2.js"></script>
     <script src="./script2.js"></script>
