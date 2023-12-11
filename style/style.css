@@ -691,7 +691,7 @@ body {
 .form-control {
   height: 46px !important;
   background-color: #f3f3f3 !important;
-  border: none !important;
+  /* border: none !important; */
   border-radius: 0% !important;
 }
 
